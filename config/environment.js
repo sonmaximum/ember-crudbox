@@ -3,11 +3,10 @@
 module.exports = function (environment) {
   'use strict';
   const ENV = {
-    modulePrefix: 'ember-auth-template-walkthrough',
+    modulePrefix: 'ga-wdi-boston.ember-auth',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
-    apiHost: 'http://localhost:4741/',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -33,8 +32,8 @@ module.exports = function (environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     let port = +('GA'.split('').reduce((p, c) =>
       p + c.charCodeAt().toString(16), '')
-    )
-    ENV.apiHost = `morning-earth-14857.herokuapp.com`
+    );
+    ENV.apiHost = `http://localhost:${port}`;
   }
 
   if (environment === 'test') {
@@ -50,8 +49,11 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.locationType = 'hash';
+    ENV.locationType = 'hash'
+    ENV.rootURL = '/ember-auth-template-walkthrough'
+    ENV.locationType = 'hash'
+    ENV.apiHost = 'https://morning-earth-14857.herokuapp.com/'
   }
 
-  return ENV;
+  return ENV
 };
