@@ -14,6 +14,7 @@ Router.map(function () {
   this.route('examples')
   this.route('example')
   this.route('example', { path: '/examples/:example_id' })
+  this.route('edit-example', {path: '/examples/:example_id/edit'})
 })
 
 export default Router

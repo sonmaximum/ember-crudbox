@@ -8,9 +8,11 @@
     <span{{action 'showSingle' example}}>
       {{fa-icon "binoculars"}}
     </span>
+    {{#if example.editable}}
     <span {{action 'delete' example}}>
       {{fa-icon "trash"}}
     </span>
+    {{/if}}
   </li>
 {{/each}}
 </ul>

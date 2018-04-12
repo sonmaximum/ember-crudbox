@@ -3,11 +3,13 @@
   {{!-- {{render-all-examples examples=model}} --}}
 <div>
   {{model.text}}
-  <span>
-    {{fa-icon "pencil"}}
-  </span>
-  <span {{action 'delete' example}}>
-    {{fa-icon "trash"}}
-  </span>
+  {{#if model.editable}}
+    <span {{action 'editSingle' model}}>
+      {{fa-icon "pencil"}}
+    </span>
+    <span {{action 'delete' model}}>
+      {{fa-icon "trash"}}
+    </span>
+  {{/if}}
 </div>
 {{#link-to "examples"}}Back to Examples{{/link-to}}

@@ -1,0 +1,13 @@
+<h3>Edit Example</h3>
+  {{!-- {{render-all-examples examples=model}} --}}
+{{#if model.editable}}
+  <div>
+    <form {{action 'saveExample' model on='submit'}}>
+      {{input placeholder='Example Text' value=model.text}}
+    <button> Save Example </button>
+  </form>
+  </div>
+{{else}}
+<h4>You are not authorized to edit this example</h4>
+{{/if}}
+{{#link-to "example" model.id}}Back to Example{{/link-to}}

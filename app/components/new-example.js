@@ -8,9 +8,7 @@ export default Component.extend({
 
   actions: {
     newExample () {
-      console.log('blah')
       this.sendAction('create', this.get('newExampleObj'))
-      console.log(this.get('example'))
     }
   }
 })

@@ -7,6 +7,11 @@ export default Route.extend({
   actions: {
     delete (example) {
       example.destroyRecord()
+      .then(() => this.transitionTo('examples'))
+    },
+    editSingle (example) {
+      this.transitionTo('edit-example', example.id)
+      // this.transitionTo('examples/' + example.id)
     }
   }
 })
