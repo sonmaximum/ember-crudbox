@@ -1,0 +1,13 @@
+<h3>Example</h3>
+
+  {{!-- {{render-all-examples examples=model}} --}}
+<div>
+  {{model.text}}
+  <span>
+    {{fa-icon "pencil"}}
+  </span>
+  <span {{action 'delete' example}}>
+    {{fa-icon "trash"}}
+  </span>
+</div>
+{{#link-to "examples"}}Back to Examples{{/link-to}}

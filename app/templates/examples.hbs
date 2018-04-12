@@ -1,0 +1,18 @@
+<h2>Examples</h2>
+
+<ul>
+  {{!-- {{render-all-examples examples=model}} --}}
+{{#each model as |example|}}
+  <li>
+    {{example.text}}
+    <span{{action 'showSingle' example}}>
+      {{fa-icon "binoculars"}}
+    </span>
+    <span {{action 'delete' example}}>
+      {{fa-icon "trash"}}
+    </span>
+  </li>
+{{/each}}
+</ul>
+{{new-example create='createExample'}}
+{{#link-to "application"}}Back to Home{{/link-to}}
