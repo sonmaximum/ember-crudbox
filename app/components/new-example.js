@@ -9,6 +9,7 @@ export default Component.extend({
   actions: {
     newExample () {
       this.sendAction('create', this.get('newExampleObj'))
+      this.set('newExampleObj.text', '')
     }
   }
 })
